@@ -6,8 +6,8 @@
 	<body>
 		<header>
 			<nav>
-				<% if current_user %>
-					<span>Hello <%= current_user.username %></span>
+				 <% if current_user %> 
+					<span>Hello <%= current_user.user_name %></span>
 					<a href="/main">Home</a>
 					<a href="/settings">Settings</a>
 					<a href="/profile">Profile</a>
