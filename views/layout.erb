@@ -1,1 +1,23 @@
-<h1>They Said What!?</h1>
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>They Said What!?</title>
+	</head>
+	<body>
+		<header>
+			<nav>
+				<% if current_user %>
+					<span>Hello <%= current_user.username %></span>
+					<a href="/main">Home</a>
+					<a href="/settings">Settings</a>
+					<a href="/profile">Profile</a>
+					<a href="/logout">logout</a>
+					<% else %>
+					<a href="/login">Log in</a>
+				<% end %>
+			</nav>
+		</header>
+		<h1>They Said What!?</h1>
+		<%= yield %>
+	</body>
+</html>
