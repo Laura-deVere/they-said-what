@@ -23,10 +23,6 @@ get '/settings' do
 	erb :settings
 end
 
-get '/layout' do 
-	erb :layout
-end
-
 get '/profile' do 
 	erb :profile
 end
@@ -34,6 +30,12 @@ end
 get '/signup' do 
 	erb :signup
 end
+
+post '/signup' do
+	user = User.create(params[:user])
+	session[:user_id] = user.id
+	redirect to '/'
+end	
 
 post '/sessions' do 
 	user = User.find_by(email: params[:email])
