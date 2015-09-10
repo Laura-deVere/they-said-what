@@ -23,16 +23,17 @@ get '/settings' do
 	erb :settings
 end
 
-get '/layout' do 
-	erb :layout
-end
-
 get '/profile' do 
 	erb :profile
 end
 
 get '/signup' do 
 	erb :signup
+end
+
+get '/logout' do 
+	session[:user_id] = nil
+	redirect to '/login'
 end
 
 post '/sessions' do 
