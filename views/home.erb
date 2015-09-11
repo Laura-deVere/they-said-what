@@ -11,3 +11,16 @@
 	<% @new_posts.each do |p| %>
 	<p><%= p.body %> by <%= p.user ? p.user.user_name : "unkown" %></p>
 	<% end %>
+
+
+	<% @users.each do |user| %>
+	<p><a href="/users/<%= user.id %>"><%= user.user_name %></a>
+<%  if current_user and current_user != user %>
+	<% if current_user and !current_user.following.include?(user) %>
+		(<a href="/follow/<%= user.id %>">Follow!</a>)
+	<%  else %>
+		(<a href="/unfollow/<%= user.id %>">Unfollow!</a>)
+		<% end %>	
+	<% end %>		
+	</p>
+<% end %>	
