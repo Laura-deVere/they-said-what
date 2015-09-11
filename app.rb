@@ -20,15 +20,21 @@ get '/' do
 	erb :home
 end
 
-get '/settings' do 
-	erb :settings
-end
-
 get '/profile' do
 	@user = current_user
 	@post = current_user.posts
 	erb :show
 end
+
+get '/profile/account' do
+		@user = current_user
+		erb :account	
+end	
+
+post '/profile/account' do
+	current_user.update(params[:user])
+	redirect to '/'
+end	
 
 get '/users/:id' do
 	begin
