@@ -24,9 +24,21 @@ get '/settings' do
 	erb :settings
 end
 
-get '/profile' do 
-	erb :profile
+get '/profile' do
+	@user = current_user
+	@post = current_user.posts
+	erb :show
 end
+
+get '/users/:id' do
+	begin
+		@user = User.find(params[:id])
+		@post = Post.find(params[:id])
+		erb :show
+	rescue
+		redirect to "/"	
+	end	
+end	
 
 get '/signup' do 
 	erb :signup
