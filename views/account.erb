@@ -1,1 +1,15 @@
 <h1>They Said What!?</h1>
+<h1>Edit Profile!</h1>
+<form action="/profile/account" method="POST">
+	<p>
+		<label for="email">Email</label>
+		<input type="email" name="[user]email" value="<%= @user.email %>" required>
+	</p>	
+	<p>
+		<label for="user_name">Username</label>
+		<input type="user_name" name="[user]user_name" value="<%= @user.user_name %>" required>
+	</p>
+	<p>
+		<input type="submit" value="Update Profile">
+	</p>	
+</form>	

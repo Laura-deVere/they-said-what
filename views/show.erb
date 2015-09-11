@@ -1,0 +1,5 @@
+<h1>They Said What!?</h1>
+<h1><%= @user.user_name %></h1>
+	<% @post.each do |p| %>
+	<p><%= p.body %></p>
+	<% end %>
