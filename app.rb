@@ -16,6 +16,7 @@ def current_user
 end
 
 get '/' do 
+	@new_posts = Post.all
 	erb :home
 end
 
@@ -37,6 +38,13 @@ post '/signup' do
 	session[:user_id] = user.id
 	redirect to '/'
 end	
+
+post '/posting' do 
+	@new_post = Post.new(params[:post])
+	@new_post.user_id = current_user.id
+	@new_post.save
+	redirect to '/'
+end
 
 get '/logout' do 
 	session[:user_id] = nil
