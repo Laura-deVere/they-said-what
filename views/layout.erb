@@ -2,12 +2,14 @@
 <html>
 	<head>
 		<title>They Said What!?</title>
+		<link rel="stylesheet" type="text/css" href="main.css">
+		<link href='https://fonts.googleapis.com/css?family=Indie+Flower' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
 		<header>
 			<nav>
 				 <% if current_user %> 
-					<span>Hello <%= current_user.user_name %></span>
+					<span>Hello, <%= current_user.user_name %>!</span>
 					<a href="/">Home</a>
 					<a href="/profile/account">Settings</a>
 					<a href="/profile">Profile</a>
@@ -16,8 +18,9 @@
 					<a href="/login">Log in</a>
 				<% end %>
 			</nav>
+			<div class="break"></div>
 		</header>
-		<h1>They Said What!?</h1>
+		<header class="main-title">They Said What!?</header>
 		<%= yield %>
 	</body>
 </html>
