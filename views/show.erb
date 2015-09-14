@@ -1,5 +1,9 @@
-
-<h2><%= @user.user_name %></h2>
-	<% @post.each do |p| %>
-	<p><%= p.body %></p>
-	<% end %>
+<div class="feed-container">
+		<p class="feed-header"><%= @user.user_name %>'s Recent Stories</p>
+		
+		<div class="feed-body">
+				<% @post.each do |p| %>
+				<p class="feed-body-text"><%= p.body %></p>
+			<% end %>
+		</div>
+	</div>

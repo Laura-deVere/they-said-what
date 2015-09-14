@@ -12,21 +12,21 @@
 				 <% if current_user %> 
 					<li><span>Hello, <%= current_user.user_name %>!</span></li>
 					<li><a href="/">Home</a></li>
-					<li><a href="/profile/account">Settings</a></li>
 					<li><a href="/profile">Profile</a></li>
+					<li><a href="/account">Settings</a></li>
 					<li><a href="/logout">Logout</a></li>
 					<% else %>
 
 					<li><a href="/login">Log in</a></li>
-
-					<a href="/signup">Sign Up</a>
+					<li><a href="/signup">Sign Up</a></li>
 
 				<% end %>
 					</ul>
 			</nav>
-			<div class="break"></div>
 		</header>
+		<div class="container">
 		<header class="main-title">They Said What!?</header>
 		<%= yield %>
+		</div>
 	</body>
 </html>

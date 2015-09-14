@@ -27,12 +27,12 @@ get '/profile' do
 	erb :show
 end
 
-get '/profile/account' do
-		@user = current_user
-		erb :account	
+get '/account' do
+	@user = current_user
+	erb :account
 end	
 
-post '/profile/account' do
+post '/account' do
 	current_user.update(params[:user])
 	redirect to '/'
 end	
