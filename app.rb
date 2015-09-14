@@ -16,6 +16,7 @@ def current_user
 end
 
 get '/' do 
+	@users = User.all
 	@new_posts = Post.all
 	erb :home
 end
@@ -33,6 +34,20 @@ end
 
 post '/profile/account' do
 	current_user.update(params[:user])
+	redirect to '/'
+end	
+
+
+get '/follow/:id' do
+	@relationship = Relationship.create(follower_id: current_user.id,
+																				followed_id: params[:id])
+	redirect to '/'
+end
+
+get '/unfollow/:id' do 
+	@relationship = Relationship.find_by(follower_id: current_user,
+																				followed_id: params[:id])
+	@relationship.destroy
 	redirect to '/'
 end	
 
