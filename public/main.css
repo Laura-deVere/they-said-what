@@ -1,0 +1,45 @@
+body {
+	color: #333333;
+	font-family: 'Indie Flower', cursive;
+}
+
+nav {
+	float: right;
+}
+
+.break {
+	clear: both;
+}
+
+.main-title {
+	text-align: center;
+	font-size: 4em;
+}
+
+.container {
+	width: 100%;
+	text-align: center;
+}
+
+.site-desc {
+	font-size: 2em;
+}
+
+.new-post-container {
+	width: 80%;
+	margin: 0 auto;
+	display: inline;
+}
+
+.new-post {
+
+}
+
+/*#post-input {
+	margin: 0 auto;
+}*/
+
+#txt-area {
+	width: 400px;
+	height: 100px;
+}
