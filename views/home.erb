@@ -1,16 +1,23 @@
 <div class="container">
-	<p class="site-desc">Did you just wait on the rudest table of your life? That lady just snapped her fingers to get your attention? Do you wish that you actually did have 8 arms!? You're in the right place, a safe place where you can vent anonymously with other Service Industry people!</p>
+	<p class="site-desc">"Did you just wait on the rudest table of your life? That lady just snapped her fingers to get your attention? Do you wish that you actually did have 8 arms!? You're in the right place, a safe place where you can vent anonymously with other Service Industry people!"</p>
 
 	<div class="new-post-container">
-		<p class="new-post">Create a new post:</p>
+		<p class="new-post">Tell Us Your Story:</p>
 		<form action="/posting" method="POST">
-		<textarea name="[post]body" id="txt-area"></textarea><br/>
+		<textarea name="[post]body" id="txt-area" placeholder="..."></textarea><br/>
 		<input type="submit" id="post-input" value="Post">
 		</form>
 	</div>
 
-	<% @new_posts.each do |p| %>
-	<p><%= p.body %> by <%= p.user ? p.user.user_name : "unkown" %></p>
-	<% end %>
+	<div class="feed-container">
+		<p class="feed-header">Recent Stories</p>
+		
+		<div class="feed-body">
+		<% @new_posts.each do |p| %>
+			<p>By <%= p.user ? p.user.user_name : "unkown" %></p>
+			<p><%= p.body %></p>
+		<% end %>
+		</div>
 
+	</div>
 </div>

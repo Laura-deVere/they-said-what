@@ -8,15 +8,17 @@
 	<body>
 		<header>
 			<nav>
+				<ul>
 				 <% if current_user %> 
-					<span>Hello, <%= current_user.user_name %>!</span>
-					<a href="/">Home</a>
-					<a href="/profile/account">Settings</a>
-					<a href="/profile">Profile</a>
-					<a href="/logout">logout</a>
+					<li><span>Hello, <%= current_user.user_name %>!</span></li>
+					<li><a href="/">Home</a></li>
+					<li><a href="/profile/account">Settings</a></li>
+					<li><a href="/profile">Profile</a></li>
+					<li><a href="/logout">Logout</a></li>
 					<% else %>
-					<a href="/login">Log in</a>
+					<li><a href="/login">Log in</a></li>
 				<% end %>
+					</ul>
 			</nav>
 			<div class="break"></div>
 		</header>
